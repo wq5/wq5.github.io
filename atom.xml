@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tiangaos.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-07-09T17:50:04.787Z</updated>
+    <title>tiangao</title>
+    <updated>2020-07-09T17:59:11.568Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tiangaos.github.io"/>
     <link rel="self" href="https://tiangaos.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>纸上得来终觉浅</subtitle>
     <logo>https://tiangaos.github.io/images/avatar.png</logo>
     <icon>https://tiangaos.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, tiangao</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://tiangaos.github.io/post/hello-gridea/</id>
