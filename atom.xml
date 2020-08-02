@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wq5.github.io</id>
     <title>wq5</title>
-    <updated>2020-08-02T11:46:57.330Z</updated>
+    <updated>2020-08-02T11:48:37.068Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wq5.github.io"/>
     <link rel="self" href="https://wq5.github.io/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://wq5.github.io/post/da-shu-ju-xue-xi-bi-ji/">
         </link>
         <updated>2020-08-02T11:36:02.000Z</updated>
-        <content type="html"><![CDATA[<p>https://tva1.sinaimg.cn/large/007S8ZIlly1ghcp8hryxxj30k01a7ju9.jpg</p>
+        <content type="html"><![CDATA[<p><a href="https://tva1.sinaimg.cn/large/007S8ZIlly1ghcp8hryxxj30k01a7ju9.jpg">脑图</a></p>
 ]]></content>
     </entry>
     <entry>
