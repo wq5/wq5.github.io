@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/tiangaos/tiangaos.github.io</id>
+    <id>https://github.com/wq5/wq5.github.io</id>
     <title>tiangao</title>
-    <updated>2020-08-02T11:07:36.319Z</updated>
+    <updated>2020-08-02T11:38:30.446Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://github.com/tiangaos/tiangaos.github.io"/>
-    <link rel="self" href="https://github.com/tiangaos/tiangaos.github.io/atom.xml"/>
+    <link rel="alternate" href="https://github.com/wq5/wq5.github.io"/>
+    <link rel="self" href="https://github.com/wq5/wq5.github.io/atom.xml"/>
     <subtitle>纸上得来终觉浅</subtitle>
-    <logo>https://github.com/tiangaos/tiangaos.github.io/images/avatar.png</logo>
-    <icon>https://github.com/tiangaos/tiangaos.github.io/favicon.ico</icon>
+    <logo>https://github.com/wq5/wq5.github.io/images/avatar.png</logo>
+    <icon>https://github.com/wq5/wq5.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, tiangao</rights>
     <entry>
+        <title type="html"><![CDATA[大数据学习笔记]]></title>
+        <id>https://github.com/wq5/wq5.github.io/post/da-shu-ju-xue-xi-bi-ji/</id>
+        <link href="https://github.com/wq5/wq5.github.io/post/da-shu-ju-xue-xi-bi-ji/">
+        </link>
+        <updated>2020-08-02T11:36:02.000Z</updated>
+        <content type="html"><![CDATA[<p>https://tva1.sinaimg.cn/large/007S8ZIlly1ghcp8hryxxj30k01a7ju9.jpg</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[一文搞懂进程与线程]]></title>
-        <id>https://github.com/tiangaos/tiangaos.github.io/post/yi-wen-gao-dong-jin-cheng-yu-xian-cheng/</id>
-        <link href="https://github.com/tiangaos/tiangaos.github.io/post/yi-wen-gao-dong-jin-cheng-yu-xian-cheng/">
+        <id>https://github.com/wq5/wq5.github.io/post/yi-wen-gao-dong-jin-cheng-yu-xian-cheng/</id>
+        <link href="https://github.com/wq5/wq5.github.io/post/yi-wen-gao-dong-jin-cheng-yu-xian-cheng/">
         </link>
         <updated>2020-07-11T14:58:30.000Z</updated>
         <content type="html"><![CDATA[<h1 id="概念">概念</h1>
