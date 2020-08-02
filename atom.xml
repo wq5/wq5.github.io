@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/wq5/wq5.github.io</id>
-    <title>tiangao</title>
-    <updated>2020-08-02T11:39:48.063Z</updated>
+    <title>wq5</title>
+    <updated>2020-08-02T11:41:55.886Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/wq5/wq5.github.io"/>
     <link rel="self" href="https://github.com/wq5/wq5.github.io/atom.xml"/>
     <subtitle>纸上得来终觉浅</subtitle>
     <logo>https://github.com/wq5/wq5.github.io/images/avatar.png</logo>
     <icon>https://github.com/wq5/wq5.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, tiangao</rights>
+    <rights>All rights reserved 2020, wq5</rights>
     <entry>
         <title type="html"><![CDATA[大数据学习笔记]]></title>
         <id>https://github.com/wq5/wq5.github.io/post/da-shu-ju-xue-xi-bi-ji/</id>
