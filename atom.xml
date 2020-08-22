@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wq5.github.io</id>
     <title>wq5</title>
-    <updated>2020-08-02T11:48:37.068Z</updated>
+    <updated>2020-08-22T14:37:52.565Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wq5.github.io"/>
     <link rel="self" href="https://wq5.github.io/atom.xml"/>
@@ -10,6 +10,109 @@
     <logo>https://wq5.github.io/images/avatar.png</logo>
     <icon>https://wq5.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, wq5</rights>
+    <entry>
+        <title type="html"><![CDATA[看 skywalking 第一个 issue]]></title>
+        <id>https://wq5.github.io/post/kan-skywalking-di-yi-ge-issue/</id>
+        <link href="https://wq5.github.io/post/kan-skywalking-di-yi-ge-issue/">
+        </link>
+        <updated>2020-08-22T14:19:35.000Z</updated>
+        <content type="html"><![CDATA[<p>当前最新的, 现在时间 2020年08月22日22:20:08<br>
+https://github.com/apache/skywalking/issues/5359</p>
+<h1 id="问题">问题</h1>
+<p>当我在一个 <code>spring cloud</code> 应用中使用 <code>@aspect</code> 注解的时候有一些信息，启动日志有一些想下面这样</p>
+<pre><code>2020-08-20 20:20:17.034 [main] INFO org.springframework.aop.framework.CglibAopProxy - Unable to proxy method [final java.lang.String com.timevale.skwka.service.TestController.getMsg$original$aXsk4F1g$accessor$UIVnuXdt(java.lang.String)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+</code></pre>
+<h1 id="wu-sheng-commented-2-days-ago">wu-sheng commented 2 days ago</h1>
+<p>你是不是也用了 agent 增强了该目标类和方法? 请提供一下所有的堆栈信息.</p>
+<blockquote>
+<p>@wu-sheng wu-sheng assigned ascrutae 2 days ago<br>
+@wu-sheng wu-sheng added agent plugin labels 2 days ago<br>
+@whfjam</p>
+</blockquote>
+<h1 id="whfjam-commented-2-days-ago">whfjam commented 2 days ago</h1>
+<p>是的， 不过这个日志看起来不像是个 error<br>
+<code>controller</code> 类是这样的</p>
+<pre><code>@controller
+public class TestController {
+
+    @RequestMapping(path = &quot;v2/test2/{fileId}&quot;,method = RequestMethod.GET)
+    public String getMsg(@PathVariable String fileId){
+        new RuntimeException().printStackTrace();
+        return &quot;1TT-&quot;+fileId;
+    }
+}
+</code></pre>
+<p>然后我用了 aop</p>
+<pre><code>@aspect
+@component
+public class ParamValiAspect {
+
+    @Pointcut(&quot;execution (* com.timevale.skwka.service.*.*(..))&quot;)
+    public void doAspect() {}
+
+    @Around(&quot;doAspect()&quot;)
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
+        Object[] args = joinPoint.getArgs();
+        for(Object arg: args){
+            if(arg == null) {
+                continue;
+            }
+        System.out.println(&quot;arg:&quot;+arg);
+        }
+
+        return joinPoint.proceed();
+    }
+}
+</code></pre>
+<p>启动日志中就能发现 :</p>
+<pre><code>INFO org.springframework.aop.framework.CglibAopProxy - Unable to proxy method [final java.lang.String com.timevale.skwka.service.TestController.getMsg$original$btT8GaHU$accessor$vhlk7XnS(java.lang.String)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+</code></pre>
+<p>没用 skywalkingagent 就是正常的。</p>
+<p>@wu-sheng</p>
+<h1 id="member-wu-sheng-commented-2-days-ago">Member @wu-sheng commented 2 days ago</h1>
+<p>这个影响了你的应用吗? 这个是因为我们的二进制生成器在运行时加了一些 final 方法到你的  Controller 类中，然后 Spring 并不支持 final 方法的 AOP , 导致了这个错误.</p>
+<p>@wu-sheng wu-sheng added the discussion label 2 days ago<br>
+@whfjam</p>
+<p>I think i should learn more about this and test more , then i will tell you about if this could affect my application</p>
+<blockquote>
+<p>@wu-sheng wu-sheng self-assigned this yesterday<br>
+@wu-sheng</p>
+</blockquote>
+<h1 id="wu-sheng-commented-yesterday">wu-sheng commented yesterday</h1>
+<p>Sure, Let's continue after you have more feedback.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[skywalking 贡献指南]]></title>
+        <id>https://wq5.github.io/post/skywalking-gong-xian-zhi-nan/</id>
+        <link href="https://wq5.github.io/post/skywalking-gong-xian-zhi-nan/">
+        </link>
+        <updated>2020-08-22T10:55:06.000Z</updated>
+        <content type="html"><![CDATA[<p>https://github.com/apache/skywalking/blob/master/CONTRIBUTING.md</p>
+<h1 id="contributing-to-apache-skywalking">Contributing to Apache SkyWalking</h1>
+<p>Firstly, thanks for your interest in contributing! I hope that this will be a pleasant first experience for you, and that you will return to continue contributing.</p>
+<h1 id="code-of-conduct">Code of Conduct</h1>
+<p>该项目以及参与其中的每个人均受 Apache 软件基金会的<a href="http://www.apache.org/foundation/policies/conduct.html">《行为准则》</a> 的约束。您需要遵守此守则参与。如果您的行为不被接受，请访问<a href="http://www.apache.org/foundation/policies/conduct.html#reporting-guidelines">Reporting Guidelines page</a>“报告指南”页面并按照其中的说明进行操作。</p>
+<h1 id="how-to-contribute">How to contribute?</h1>
+<p>Most of the contributions that we receive are code contributions, but you can also contribute to the documentation or simply report solid bugs for us to fix.</p>
+<h1 id="how-to-report-a-bug">How to report a bug?</h1>
+<ul>
+<li>确保尚未在 GitHub 的 <a href="https://github.com/apache/skywalking/issues">issues</a>列表中出现过。</li>
+<li>如果找不到解决该问题的未解决问题，请打开一个新问题。保持标题和描述清晰，包含尽可能多的相关信息，以及一个简单的代码示例或可执行测试用例说明未按预期发生的行为。</li>
+</ul>
+<h1 id="how-to-add-a-new-feature-or-change-an-existing-one">How to add a new feature or change an existing one</h1>
+<p>在进行任何重大更改之前，请打开一个 <a href="https://github.com/apache/skywalking/issues">issue</a> 。提前讨论您提议的更改，将使每个人的贡献过程变得顺利。</p>
+<p>在讨论完您的更改并准备好代码后，请确保测试通过并打开您的请求。如果满足以下条件，则很可能会接受您的PR：</p>
+<ul>
+<li>更新 README.md 包括详细的接口变更.</li>
+<li>包含新功能的测试用例.</li>
+<li>在描述中引用原始问题, 比如: &quot;Resolves #123&quot;.</li>
+<li>有一个良好的 <a href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">commit message</a>.<br>
+Do you have questions about the source code?</li>
+</ul>
+<p>Join #skywalking channel at Apache Slack</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[大数据学习笔记]]></title>
         <id>https://wq5.github.io/post/da-shu-ju-xue-xi-bi-ji/</id>
